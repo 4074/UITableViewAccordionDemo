@@ -10,9 +10,21 @@ import UIKit
 
 class AccordionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var wrapView: UIView!
+    @IBOutlet weak var titleView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .None
+        
+        wrapView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        wrapView.layer.cornerRadius = 4
+        wrapView.layer.masksToBounds = true
+        
+        titleView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        titleView.layer.cornerRadius = 4
+        titleView.layer.masksToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
